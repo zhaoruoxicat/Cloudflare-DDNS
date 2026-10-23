@@ -1,0 +1,50 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Build outputs; publish deb files as release assets
+/dist/
+/build/
+*.deb
+*.buildinfo
+*.changes
+
+# Local credentials and runtime files
+.env
+.env.*
+!.env.example
+/config.json
+/config.local.json
+/secrets/
+/credentials/
+*.key
+*.pem
+*.p12
+*.pfx
+/status.json
+/update.lock
+*.log
+
+# Internal session records (may contain local network information)
+/docs/design.md
+/docs/implementation-plan.md
+/docs/progress.md
+
+# Editor and operating-system files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db

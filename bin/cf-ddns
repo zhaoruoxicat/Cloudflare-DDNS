@@ -1,0 +1,14 @@
+#!/usr/bin/python3 -I
+"""Entry point for both source checkouts and the Debian installation."""
+from pathlib import Path
+import sys
+
+sys.dont_write_bytecode = True
+root = Path(__file__).resolve().parent.parent
+source = root / 'src'
+installed = root / 'lib' / 'cf-ddns'
+sys.path.insert(0, str(installed if installed.is_dir() else source))
+from cf_ddns.cli import main
+
+if __name__ == '__main__':
+    raise SystemExit(main())

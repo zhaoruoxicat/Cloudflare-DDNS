@@ -1,0 +1,12 @@
+Package: cf-ddns
+Version: 0.1.1
+Section: net
+Priority: optional
+Architecture: all
+Depends: python3 (>= 3.11), ca-certificates, systemd (>= 252), adduser
+Maintainer: CF-DDNS Maintainers <cf-ddns@localhost>
+Description: Cloudflare dynamic DNS command-line client for Raspberry Pi
+ Chinese interactive setup, direct public IPv4 detection, DNS-only A record
+ synchronization and optional systemd timer. Uses only the Python standard
+ library. No credentials are included and automatic updates start only
+ after interactive configuration.

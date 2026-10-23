@@ -1,0 +1,21 @@
+# Keep Unix line endings for scripts, systemd units and Debian packaging.
+* text=auto eol=lf
+
+*.py text
+*.sh text
+*.md text
+*.service text
+*.timer text
+/bin/cf-ddns text
+/packaging/control text
+/packaging/postinst text
+/packaging/prerm text
+/packaging/postrm text
+/LICENSE text
+
+# Release artifacts, if explicitly added, are binary.
+*.deb binary
+*.png binary
+*.jpg binary
+*.gz binary
+*.xz binary

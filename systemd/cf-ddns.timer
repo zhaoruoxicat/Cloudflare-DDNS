@@ -1,0 +1,12 @@
+[Unit]
+Description=Periodic Cloudflare dynamic DNS update
+
+[Timer]
+OnActiveSec=10s
+OnUnitInactiveSec=300s
+AccuracySec=1s
+RandomizedDelaySec=5s
+Unit=cf-ddns.service
+
+[Install]
+WantedBy=timers.target

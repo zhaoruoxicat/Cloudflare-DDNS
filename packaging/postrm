@@ -1,0 +1,18 @@
+#!/bin/sh
+set -e
+case "$1" in
+    purge)
+        # Known program-owned files only; leave any unrelated directory contents.
+        rm -f /etc/cf-ddns/config.json
+        rmdir /etc/cf-ddns 2>/dev/null || true
+        rm -f /etc/systemd/system/cf-ddns.timer.d/interval.conf
+        rmdir /etc/systemd/system/cf-ddns.timer.d 2>/dev/null || true
+        rm -f /etc/systemd/system/timers.target.wants/cf-ddns.timer
+        rm -f /var/lib/cf-ddns/status.json /var/lib/cf-ddns/update.lock
+        rmdir /var/lib/cf-ddns 2>/dev/null || true
+        ;;
+esac
+if [ -d /run/systemd/system ]; then
+    systemctl daemon-reload
+fi
+exit 0
